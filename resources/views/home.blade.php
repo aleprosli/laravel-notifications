@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @php
+                        $notifications = auth()->user()->notifications;
+                    @endphp
+                   <table>
+                      <tr>
+                        <th>Noti</th>
+                      </tr>
+                      @foreach ($notifications as $noti)
+                      <tr>
+                     
+                        <td>{{ $noti->type }}</td>  
+                      </tr>
+                      @endforeach
+
+                   </table>
                 </div>
             </div>
         </div>
