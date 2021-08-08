@@ -23,8 +23,10 @@
                       </tr>
                       @foreach ($notifications as $noti)
                       <tr>
-                     
-                        <td>{{ $noti->type }}</td>  
+                          <td>
+                            @include('notifications.'.Str::snake(class_basename($noti->type)))
+                            {{-- <td>{{ $noti->type }}</td>   --}}
+                          </td>
                       </tr>
                       @endforeach
 
